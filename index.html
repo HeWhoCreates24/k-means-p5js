@@ -2,15 +2,79 @@
 <html lang="en">
 
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/addons/p5.sound.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8" />
+    <title>K-Means Clustering</title>
 </head>
 
 <body>
-    <main>
-    </main>
+    <div id="ui-layer">
+        <header>
+            <div class="logo">
+                <h1>K-Means</h1>
+                <span class="badge">PlayGround</span>
+            </div>
+            <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme">
+                <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg id="sun-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            </button>
+        </header>
+
+        <div class="controls-container">
+            <div class="card stats-card">
+                <div class="stat-item">
+                    <span class="label">POINTS</span>
+                    <span class="value" id="points-val">0</span>
+                </div>
+                <div class="divider"></div>
+                <div class="stat-item">
+                    <span class="label">CLUSTERS (K)</span>
+                    <span class="value" id="k-val">0</span>
+                    <div class="mini-controls">
+                        <button id="k-dec" class="mini-btn">-</button>
+                        <button id="k-inc" class="mini-btn">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card actions-card">
+                <button id="btn-reset" class="action-btn secondary">
+                    <span>CLEAR</span>
+                </button>
+                <button id="btn-restart" class="action-btn secondary">
+                    <span>RESTART</span>
+                </button>
+                <button id="btn-step" class="action-btn primary">
+                    <span>STEP</span>
+                </button>
+                <button id="btn-auto" class="action-btn accent">
+                    <span>AUTO</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <p>Click to add points</p>
+        </div>
+    </div>
     <script src="sketch.js"></script>
 </body>
 
