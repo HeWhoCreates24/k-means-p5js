@@ -2,7 +2,7 @@
 const POINT_RAD = 8;
 const CENTROID_RAD = 16; // Increased size
 const VORONOI_STEP = 20; // Increased for better performance
-const CONVERGENCE_TH = 1;
+const CONVERGENCE_TH = 0.2;
 
 // --- State Variables ---
 let k = 3;
